@@ -28,6 +28,7 @@ func SetupRouter(nrm gin.HandlerFunc) *gin.Engine {
 		grp1.PUT("/update", userController.UpdateUser)
 		grp1.POST("/deletebyUserId/:userId", userController.DeleteUserById)
 	}
+	
 	grp2 := r.Group("/")
 	{
 		grp2.GET("/health", healthController.GetHealth)
