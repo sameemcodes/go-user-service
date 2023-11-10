@@ -2,8 +2,10 @@ package main
 
 import (
 
-	"go-tools/durable"
+	//"go-tools/durable"
 	"go-tools/router"
+	"go-tools/utils"
+
 	"context"
 	"log"
 
@@ -24,8 +26,8 @@ import (
 
 func main() {
 
-	durable.GormDB = durable.InitMysqlDb()
-	defer durable.CloseDbConn(durable.GormDB)
+	//durable.GormDB = durable.InitMysqlDb()
+	//defer durable.CloseDbConn(durable.GormDB)
 
 	r := router.SetupRouter(GinContextToContextMiddleware())
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
